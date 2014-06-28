@@ -1,0 +1,159 @@
+html {
+  font-size: 16px;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    padding-bottom: 2em;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #e5e5e5;
+}
+
+textarea {
+  min-height: 10em;
+}
+
+input, textarea, button {
+  font-size: 1em;
+}
+
+button {
+  padding: .5em;
+}
+
+article {
+  margin-bottom: 1em;
+}
+
+.highlight {
+  background-color: #37d594;
+}
+
+/* GRID */
+#app {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* MODULES */
+
+.paragraph {
+
+}
+
+.paragraph .comments {
+  display: none;
+}
+
+.paragraph.paragraph-show-comments .comments {
+  display: block;
+}
+
+
+.highlight {
+  position: relative;
+}
+
+.highlight .tooltip {
+  visibility: hidden;
+  position: absolute;
+  top: -60px;
+  margin-left: -75px;
+  width: 100px;
+  line-height: 20px;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #e5e5e5;
+  background: #333;
+  border: 4px solid #333;
+  border-radius: 5px;
+  text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px;
+}
+
+.highlight .tooltip:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  top: 43px;
+  left: 40px;
+}
+
+.highlight.show-add-comment-tooltip .tooltip {
+  visibility: visible;
+}
+
+.highlight .tooltip a {
+  color: #e5e5e5;
+}
+
+.comment-new .comment-new-icon {
+  display: none;
+}
+
+.comment-new .comment-new-form {
+  display: none;
+}
+
+
+.comment-new.comment-new-show-icon .comment-new-icon {
+  display: block;
+}
+
+.comment-new.comment-new-show-form .comment-new-form {
+  display: block;
+}
+
+.paragraph.paragraph-show-comments .comments-number {
+  display: none;
+}
+
+.comment-list {
+  margin: 1em;
+}
+
+.comment {
+  cursor: pointer;
+  padding: 1em;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.comment:hover {
+  background-color: #edfbf6;
+}
+
+.comment-selected, .comment-selected:hover {
+  background-color: #37d594;
+}
+
+.float-right {
+  float: right;
+}
+
+.no-ul {
+  text-decoration: none;
+}
