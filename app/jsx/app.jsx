@@ -4,11 +4,11 @@ define(['storage', 'text-view', 'text-add', 'text-list'],
     function(Storage, TextView, TextAdd, TextList) {
 
   var HASH_REGEX = /^#\/?(.*)$/,
-    TEXT_REGEX = /^text\/([^\/]+)$/,
-    location = window.location;
+      TEXT_REGEX = /^text\/([^\/]+)$/,
+      location = window.location;
 
 
-	return React.createClass({
+  return React.createClass({
     displayName: 'App',
 
 
@@ -46,7 +46,7 @@ define(['storage', 'text-view', 'text-add', 'text-list'],
 
     render: function() {
       var path = this.state.path,
-        textPathMatch;
+          textPathMatch;
 
       // Routes
 
