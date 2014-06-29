@@ -4,7 +4,9 @@
 [React][react].
 
 
-*Demo*: [http://filipovskii.github.io/react-commenter/][demo]
+## Demo
+
+[http://filipovskii.github.io/react-commenter/][demo]
 
 
 ## Install
