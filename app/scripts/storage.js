@@ -23,6 +23,10 @@ define(['lodash'], function(_) {
     return localStorage.removeItem(key);
   }
 
+  /**
+   * Notify listeners, when event occurs
+   * @param {string} event - event name
+   */
   function _notify(event) {
     _callbacks[event].forEach(function (cb) {
       cb()
@@ -31,7 +35,11 @@ define(['lodash'], function(_) {
 
   return {
 
-    // Store all paragraphs and the text object itself
+    /**
+     * Store all paragraphs and the text object itself
+     * @param {string} header
+     * @param {string} text
+     */
     addText: function(header, text) {
       var textId = _id(),
           textObj,
@@ -101,6 +109,12 @@ define(['lodash'], function(_) {
     },
 
 
+    /**
+     * Add comment to paragraph
+     * @param {string} pId - id of paragraph
+     * @param {string} content - comment text
+     * @param {array} highlight - [start, end] of paragraph to highlight
+     */
     addComment: function(pId, content, highlight) {
       var commentId = _id(),
           existingCommentIds,
