@@ -9,10 +9,16 @@ define(['lodash', 'storage', 'comment-list', 'comment-add', 'comment-view'],
 
     getInitialState: function() {
       return {
+        // comments block includes:
+        //   all comments
+        //   add comment link
+        //   add comment form
+        //   hide comments link
         showComments: false,
+        // tooltip is shown above highlighted text
         showAddCommentTooltip: false,
         showAddCommentForm: false,
-        selectedComment: null,
+        // [start, end] positions of piece of text to highlight
         highlight: []
       };
     },
@@ -31,8 +37,6 @@ define(['lodash', 'storage', 'comment-list', 'comment-add', 'comment-view'],
         showComments: true,
         showAddCommentTooltip: false
       });
-
-      this.props.onShowComments();
     },
 
 
@@ -41,7 +45,6 @@ define(['lodash', 'storage', 'comment-list', 'comment-add', 'comment-view'],
         showComments: true,
         showAddCommentForm: true,
         showAddCommentTooltip: false,
-        selectedComment: null
       });
     },
 
@@ -66,15 +69,6 @@ define(['lodash', 'storage', 'comment-list', 'comment-add', 'comment-view'],
     },
 
 
-    handleCommentSelect: function(comment) {
-      return function() {
-        this.setState({
-          selectedComment: comment
-        });
-      }.bind(this);
-    },
-
-
     highlightCorrespondingText: function(comment) {
       return function() {
         this.setState({
@@ -93,12 +87,16 @@ define(['lodash', 'storage', 'comment-list', 'comment-add', 'comment-view'],
 
     handleCommentAdd: function() {
       this.setState({
-        showAddCommentForm: false
+        showAddCommentForm: false,
+        highlight: []
       });
     },
 
 
     handleCommentDelete: function() {
+      this.setState({
+        highlight: []
+      });
       this.forceUpdate();
     },
 

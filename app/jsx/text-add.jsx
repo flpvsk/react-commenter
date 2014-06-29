@@ -18,14 +18,17 @@ define(['storage'], function (Storage) {
     },
 
     addText: function() {
-      Storage.addText(this.state.header, this.state.text);
+      var text = Storage.addText(this.state.header, this.state.text);
+      window.location.hash = '#/text/' + text.id;
     },
 
     render: function() {
       return (
         <section>
           <h2>Add Text</h2>
+          <h3>Header:</h3>
           <input onChange={this.headerChange} value={this.state.header} />
+          <h3>Content:</h3>
           <textarea onChange={this.textChange} value={this.state.text} />
 
           <div>

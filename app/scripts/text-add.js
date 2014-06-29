@@ -18,14 +18,17 @@ define(['storage'], function (Storage) {
     },
 
     addText: function() {
-      Storage.addText(this.state.header, this.state.text);
+      var text = Storage.addText(this.state.header, this.state.text);
+      window.location.hash = '#/text/' + text.id;
     },
 
     render: function() {
       return (
         React.DOM.section(null, 
           React.DOM.h2(null, "Add Text"),
+          React.DOM.h3(null, "Header:"),
           React.DOM.input( {onChange:this.headerChange, value:this.state.header} ),
+          React.DOM.h3(null, "Content:"),
           React.DOM.textarea( {onChange:this.textChange, value:this.state.text} ),
 
           React.DOM.div(null, 

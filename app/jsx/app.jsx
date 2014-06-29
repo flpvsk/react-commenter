@@ -17,6 +17,7 @@ define(['storage', 'text-view', 'text-add', 'text-list'],
       var pathMatch = location.hash.match(HASH_REGEX);
       if (!pathMatch) {
         location.hash = '#/';
+        return {path: ''};
       }
       return {path: pathMatch[1]}
     },
